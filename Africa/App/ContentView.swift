@@ -20,7 +20,6 @@ struct ContentView: View {
             } //: LIST
             .navigationBarTitle("Africa", displayMode: .large)
         } //: NAVIGATION
-        .padding()
     }
 }
 
