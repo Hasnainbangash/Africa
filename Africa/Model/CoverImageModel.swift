@@ -5,4 +5,9 @@
 //  Created by Elexoft on 18/02/2025.
 //
 
-import Foundation
+import SwiftUI
+
+struct CoverImage: Codable, Identifiable {
+    let id: String
+    let name: String
+}
