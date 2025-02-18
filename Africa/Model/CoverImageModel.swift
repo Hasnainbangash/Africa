@@ -8,6 +8,6 @@
 import SwiftUI
 
 struct CoverImage: Codable, Identifiable {
-    let id: String
+    let id: Int
     let name: String
 }
