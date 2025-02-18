@@ -21,8 +21,19 @@ struct AnimalListItemView: View {
                     RoundedRectangle(cornerRadius: 12)
                 )
             
-            Text("Hello, World!")
-        }
+            VStack(alignment: .leading, spacing: 8) {
+                Text("Lion")
+                    .font(.title2)
+                    .fontWeight(.heavy)
+                    .foregroundColor(.accentColor)
+                
+                Text("The world's most social felines, lions roam the savannas and grasslands of the African continent, hunting cooperatively and raising cubs in prides.")
+                    .font(.footnote)
+                    .multilineTextAlignment(.leading)
+                    .lineLimit(2)
+                    .padding(.trailing, 8)
+            } //: VSTACK
+        } //: HSTACK
     }
 }
 
