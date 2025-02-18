@@ -9,7 +9,13 @@ import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text("Hello, World!")
+        TabView {
+            ContentView()
+                .tabItem {
+                    Image(systemName: "square.grid.2x2")
+                    Text("Browse")
+                }
+        } //: TAB
     }
 }
 
