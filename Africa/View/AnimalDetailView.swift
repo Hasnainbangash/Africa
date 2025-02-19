@@ -15,7 +15,12 @@ struct AnimalDetailView: View {
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView(.vertical, showsIndicators: false) {
+            VStack(alignment: .center, spacing: 20) {
+                Text("")
+            } //: VSTACK
+            .navigationBarTitle("Learn about \(animal.name)", displayMode: .inline)
+        } //: SCROLL
     }
 }
 
@@ -23,5 +28,7 @@ struct AnimalDetailView: View {
 
 #Preview {
     let animals: [Animal] = Bundle.main.decode("animals.json")
-    AnimalDetailView(animal: animals[0])
+    NavigationView {
+        AnimalDetailView(animal: animals[0])
+    }
 }
