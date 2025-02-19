@@ -44,7 +44,9 @@ struct AnimalDetailView: View {
                 
                 // GALLERY
                 Group {
-                    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures ")
+                    HeadingView(headingImage: "photo.on.rectangle.angled", headingText: "Wilderness in Pictures")
+                    
+                    InsetGalleryView(animal: animal)
                 }
                 .padding(.horizontal)
                 
