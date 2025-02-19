@@ -10,10 +10,12 @@ import SwiftUI
 struct AnimalListItemView: View {
     // MARK: - PROPERTIES
     
+    let animal: Animal
+    
     // MARK: - BODY
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            Image("lion")
+            Image(animal.image)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 90, height: 90)
@@ -22,12 +24,12 @@ struct AnimalListItemView: View {
                 )
             
             VStack(alignment: .leading, spacing: 8) {
-                Text("Lion")
+                Text(animal.name)
                     .font(.title2)
                     .fontWeight(.heavy)
                     .foregroundColor(.accentColor)
                 
-                Text("The world's most social felines, lions roam the savannas and grasslands of the African continent, hunting cooperatively and raising cubs in prides.")
+                Text(animal.headline)
                     .font(.footnote)
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
@@ -40,7 +42,8 @@ struct AnimalListItemView: View {
 // MARK: - PREVIEW
 
 #Preview {
-    AnimalListItemView()
+    let animals: [Animal] = Bundle.main.decode("animals.json")
+    AnimalListItemView(animal: animals[1])
         .previewLayout(.sizeThatFits)
         .padding()
 }
