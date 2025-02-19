@@ -36,7 +36,11 @@ struct AnimalDetailView: View {
                     )
                 
                 // HEADLINE
-                
+                Text(animal.headline)
+                    .font(.headline)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.accentColor)
+                    .padding(.horizontal)
                 
                 // GALLERY
                 
