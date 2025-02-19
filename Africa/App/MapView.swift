@@ -32,8 +32,16 @@ struct MapView: View {
             // (A) PIN: OLD STYLE (always static)
             // MapPin(coordinate: item.location, tint: .accentColor)
             
-            // (B) PIN: NEW STYLE (always static)
-            MapMarker(coordinate: item.location, tint: .accentColor)
+            // (B) Marker: NEW STYLE (always static)
+            // MapMarker(coordinate: item.location, tint: .accentColor)
+            
+            // (C) CUSTOM BASIC ANNOTATION (it could be interactive)
+            MapAnnotation(coordinate: item.location) {
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 32, height: 32, alignment: .center)
+            } //: ANNOTATION
         })
     }
 }
