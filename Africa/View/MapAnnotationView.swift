@@ -10,12 +10,16 @@ import SwiftUI
 struct MapAnnotationView: View {
     // MARK: - PROPERTIES
     
-    
+    var location: NationalParkLocation
     
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Image(location.image)
+            .resizable()
+            .scaledToFit()
+            .frame(width: 48, height: 48, alignment: .center)
+            .clipShape(Circle())
     }
 }
 
@@ -23,7 +27,8 @@ struct MapAnnotationView: View {
 // MARK: - PREVIEW
 
 #Preview {
-    MapAnnotationView()
+    let locations: [NationalParkLocation] = Bundle.main.decode("locations.json")
+    MapAnnotationView(location: locations[0])
         .previewLayout(.sizeThatFits)
         .padding()
 }
