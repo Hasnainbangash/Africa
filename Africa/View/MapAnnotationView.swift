@@ -15,11 +15,21 @@ struct MapAnnotationView: View {
     // MARK: - BODY
     
     var body: some View {
-        Image(location.image)
-            .resizable()
-            .scaledToFit()
-            .frame(width: 48, height: 48, alignment: .center)
-            .clipShape(Circle())
+        ZStack {
+            Circle()
+                .fill(Color.accentColor)
+                .frame(width: 54, height: 54)
+            
+            Circle()
+                .stroke(Color.accentColor, lineWidth: 2)
+                .frame(width: 52, height: 52)
+            
+            Image(location.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 48, height: 48, alignment: .center)
+                .clipShape(Circle())
+        } //: ZSTACK
     }
 }
 
