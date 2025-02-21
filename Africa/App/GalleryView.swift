@@ -10,6 +10,8 @@ import SwiftUI
 struct GalleryView: View {
     // MARK: - PROPERTIES
     
+    let animals: [Animal] = Bundle.main.decode("animals.json")
+    
     // SIMPLE GRID DEFINATION
     let gridLayout: [GridItem] = [
         GridItem(.flexible()),
@@ -24,7 +26,13 @@ struct GalleryView: View {
             // MARK: - GRID
             
             LazyVGrid(columns: gridLayout, alignment: .center, spacing: 10) {
-                Text("Gallery")
+                ForEach(animals) { item in
+                    Image(item.image)
+                        .resizable()
+                        .scaledToFit()
+                        .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                } //: LOOP
             } //: GRID
         } //: SCROLL
         .frame(maxWidth: .infinity, maxHeight: .infinity)
