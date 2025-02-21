@@ -11,6 +11,7 @@ struct MotionAnimationView: View {
     // MARK: - PROPERTIES
     
     @State private var randomCircle = Int.random(in: 12...16)
+    @State private var isAnimating: Bool = false
     
     // MARK: - FUNCTIONS
     
@@ -47,6 +48,12 @@ struct MotionAnimationView: View {
                         .position(
                             x: randomCoordinate(max: geometry.size.width),
                             y: randomCoordinate(max: geometry.size.height)
+                        )
+                        .animation(
+                            Animation.interpolatingSpring(stiffness: 0.5, damping: 0.5)
+                                .repeatForever()
+                                .speed(2)
+                                .delay(1)
                         )
                 } //: LOOP
                 
