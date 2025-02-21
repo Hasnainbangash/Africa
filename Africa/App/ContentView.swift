@@ -12,6 +12,8 @@ struct ContentView: View {
     
     let animals: [Animal] = Bundle.main.decode("animals.json")
     
+    @State private var isGridViewActive: Bool = false
+    
     // MARK: - BODY
     var body: some View {
         NavigationView {
@@ -33,19 +35,21 @@ struct ContentView: View {
                         // LIST
                         Button(action: {
                             print("List view is activated")
+                            isGridViewActive = false
                         }) {
                             Image(systemName: "square.fill.text.grid.1x2")
                                 .font(.title2)
-                                .foregroundColor(.accentColor)
+                                .foregroundColor(isGridViewActive ? .primary : .accentColor)
                         }
                         
                         // GRID
                         Button(action: {
                             print("Grid view is activated")
+                            isGridViewActive = true
                         }) {
                             Image(systemName: "square.grid.2x2")
                                 .font(.title2)
-                                .foregroundColor(.primary)
+                                .foregroundColor(isGridViewActive ? .accentColor : .primary)
                         }
                     } //: HSTACK
                 } //: BUTTONS
