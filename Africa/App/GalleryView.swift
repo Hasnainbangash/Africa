@@ -8,6 +8,12 @@
 import SwiftUI
 
 struct GalleryView: View {
+    // MARK: - PROPERTIES
+    
+    
+    
+    // MARK: - BODY
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             Text("Gallery")
@@ -16,6 +22,8 @@ struct GalleryView: View {
         .background(MotionAnimationView())
     }
 }
+
+// MARK: - PREVIEW
 
 #Preview {
     GalleryView()
