@@ -68,6 +68,8 @@ struct ContentView: View {
                                 AnimalListItemView(animal: animal)
                             } //: LINK
                         } //: LOOP
+                        
+                        Credits_CopyrightView()
                     } //: LIST
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
