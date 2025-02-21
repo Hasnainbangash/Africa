@@ -31,7 +31,14 @@ struct MotionAnimationView: View {
     }
     
     // 4. RANDOM SPEED
+    func randomSpeed() -> Double {
+        return Double.random(in: 0.025...1.0)
+    }
+    
     // 5. RANDOM DELAY
+    func randomDelay() -> Double {
+        return Double.random(in: 0...2)
+    }
     
     // MARK: - BODY
     
@@ -44,7 +51,7 @@ struct MotionAnimationView: View {
                         .foregroundColor(.gray)
                         .opacity(0.15)
                         .frame(width: randomSize(), height: randomSize(), alignment: .center)
-                        .scaleEffect(randomScale())
+                        .scaleEffect(isAnimating ? randomScale() : 1)
                         .position(
                             x: randomCoordinate(max: geometry.size.width),
                             y: randomCoordinate(max: geometry.size.height)
@@ -52,12 +59,13 @@ struct MotionAnimationView: View {
                         .animation(
                             Animation.interpolatingSpring(stiffness: 0.5, damping: 0.5)
                                 .repeatForever()
-                                .speed(2)
-                                .delay(1)
+                                .speed(randomSpeed())
+                                .delay(randomDelay())
                         )
+                        .onAppear {
+                            isAnimating = true
+                        }
                 } //: LOOP
-                
-                Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
             } //: ZSTACK
         } //: Geometry
     }
