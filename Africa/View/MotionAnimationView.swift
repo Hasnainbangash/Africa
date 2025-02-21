@@ -67,6 +67,8 @@ struct MotionAnimationView: View {
                         }
                 } //: LOOP
             } //: ZSTACK
+            // By using this modifier SwiftUI uses core animations to for its rendering by default which offers great performanace out of the box
+            .drawingGroup()
         } //: Geometry
     }
 }
