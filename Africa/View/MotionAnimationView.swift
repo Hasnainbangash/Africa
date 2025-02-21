@@ -15,7 +15,10 @@ struct MotionAnimationView: View {
     // MARK: - BODY
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        // With this geometry reader container we can measure not only the screen size but any view size, Basically it gives us access to the size and position of the parent view. One important thing we should keep in mind that when we wrap any view into a geometry reader container than the origin point will be changed from the center to top left
+        GeometryReader {geometry in
+            Text("Width: \(Int(geometry.size.width)) Height: \(Int(geometry.size.height))")
+        } //: Geometry
     }
 }
 
