@@ -11,9 +11,11 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     
     let animals: [Animal] = Bundle.main.decode("animals.json")
+    let haptics = UIImpactFeedbackGenerator(style: .medium)
     
     @State private var isGridViewActive: Bool = false
-    let haptics = UIImpactFeedbackGenerator(style: .medium)
+    
+    let gridLayout: [GridItem] = Array(repeating: GridItem(.flexible()), count: 2)
     
     // MARK: - BODY
     var body: some View {
