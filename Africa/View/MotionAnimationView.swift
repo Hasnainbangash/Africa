@@ -12,6 +12,14 @@ struct MotionAnimationView: View {
     
     @State private var randomCircle = Int.random(in: 12...16)
     
+    // MARK: - FUNCTIONS
+    
+    // 1. RANDOM COORDINATE
+    // 2. RANDOM SIZE
+    // 3. RANDOM SCALE
+    // 4. RANDOM SPEED
+    // 5. RANDOM DELAY
+    
     // MARK: - BODY
     
     var body: some View {
