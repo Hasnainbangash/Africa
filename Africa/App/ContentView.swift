@@ -22,6 +22,20 @@ struct ContentView: View {
     // MARK: - FUNCTIONS
     
     func gridSwitch() {
+        
+        /*
+         // Easy code to implement the functionality
+         if gridColumn == 3 {
+             gridColumn = 1
+         } else {
+             gridColumn += 1
+         }
+        
+        // Update grid layout based on column count
+        gridLayout = Array(repeating: .init(.flexible()), count: gridColumn)
+         */
+        
+        // Hard way to do the functionality of changing
         gridLayout = Array(repeating: .init(.flexible()), count: gridLayout.count % 3 + 1)
         gridColumn = gridLayout.count
         print("Grid Number: \(gridColumn)")
