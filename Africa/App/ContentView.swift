@@ -19,17 +19,21 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Group {
-                List {
-                    CoverImageView()
-                        .frame(height: 300)
-                        .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                    
-                    ForEach(animals) { animal in
-                        NavigationLink(destination: AnimalDetailView(animal: animal)) {
-                            AnimalListItemView(animal: animal)
-                        } //: LINK
-                    } //: LOOP
-                } //: LIST
+                if !isGridViewActive {
+                    List {
+                        CoverImageView()
+                            .frame(height: 300)
+                            .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                        
+                        ForEach(animals) { animal in
+                            NavigationLink(destination: AnimalDetailView(animal: animal)) {
+                                AnimalListItemView(animal: animal)
+                            } //: LINK
+                        } //: LOOP
+                    } //: LIST
+                } else {
+                    Text("Grid view is active")
+                } //: CONDITION
             } //: GROUP
             .navigationBarTitle("Africa", displayMode: .large)
             .toolbar {
