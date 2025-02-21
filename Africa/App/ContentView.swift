@@ -70,6 +70,7 @@ struct ContentView: View {
                         } //: LOOP
                         
                         Credits_CopyrightView()
+                            .modifier(CenterModifier())
                     } //: LIST
                 } else {
                     ScrollView(.vertical, showsIndicators: false) {
